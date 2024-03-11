@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>AccoManager Booking</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js" defer></script>
+    <script src="js/bootstrap.min.js" defer></script>
+    <script src="js/owl.carousel.min.js" defer></script>
+    <script src="js/smoothscroll.js" defer></script>
+    <script src="js/custom.js" defer></script>
+
+    <!--PAGE JS-->
+    <script src="js/admin_portal.js" defer></script>
+
+
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+
+            <span class="spinner-rotate"></span>
+
+        </div>
+    </section>
+
+
+    <!-- MENU -->
+    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
+
+                <!-- lOGO TEXT HERE -->
+                <a href="#" class="navbar-brand">AccoManager</a>
+            </div>
+
+            <!-- MENU LINKS -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-nav-first">
+                    <li><a href="user_portal.php">Home</a></li>
+                    <li><a href="php/logout.php">Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="content">
+        <div class="container mt-4">
+            <div class="text-center">
+                <h1>Admin Portal</h1>
+                <form class="RegisterForm">
+                    <select id="reportSelect" class="form-control">
+                        <option value="null">Select Report</option>
+                        <option value="AUDIT">Manager Audit</option>
+                        <option value="IR">Income Report</option>
+                        <option value="OR">Occupancy Report</option>
+                        <option value="OCR">Occupancy Comparison Report</option>
+                        <option value="ROR">Room Occupancy Report</option>
+                        <option value="BTS">Booking Total Statistics</option>
+                        <option value="BTRS">Booking Trends Statistics</option>
+                        <option value="BCS">Booking Cancellation Statistics</option>
+                        <option value="AR">Average Rating</option>
+                        <option value="ART">Average Rating Top</option>
+                        <option value="PR1">Performance Report 1</option>
+                        <option value="PR2">Performance Report 2</option>
+                        <option value="PR3">Performance Report 3</option>
+                    </select>
+
+                    <div id="fieldsContainer">
+                        <!-- Fields for each report go here -->
+
+                        <!-- Income Report Fields -->
+                        <div id="minFields" class="hidden">
+                            <label>Accomodation Type</label>
+                            <select id="incomeAccomType" class="form-control">
+
+                            </select>
+
+                            <label>Room Type</label>
+                            <select id="incomeRoomType" class="form-control">
+
+                            </select>
+
+                            <label>City</label>
+                            <select id="incomeCity" class="form-control">City</select>
+                            <label>Country</label>
+                            <select id="incomeCountry" class="form-control">Country</select>
+                            <label>Time Filter</label>
+                            <select id="incomeTime" class="form-control">
+                                <option>NULL</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Trimonthly">Trimonthly</option>
+                                <option value="Yearly">Yearly</option>
+                            </select>
+                            <label>Start Date</label>
+                            <input type="date" id="incomeStartDate"></input>
+                            <label>End Date</label>
+                            <input type="date" id="incomeEndDate"></input>
+                            <label>Sorting Method</label>
+                            <select id="incomeSort" class="form-control">
+                                <option>NULL</option>
+                                <option value="ASC">Ascending</option>
+                                <option value="DESC">Descending</option>
+                            </select>
+
+                        </div>
+
+                        <!-- Occupancy Report Fields -->
+                        <div id="maxFields" class="hidden">
+                            <label>Accommodation Type</label>
+                            <select id="occupancyAccomType" class="form-control"></select>
+                            <label>Room Type</label>
+                            <select id="occupancyRoomType" class="form-control">Room Type</select>
+                            <label>City</label>
+                            <select id="occupancyCity" class="form-control">City</select>
+                            <label>Country</label>
+                            <select id="occupancyCountry" class="form-control">Country</select>
+                            <label>Time</label>
+                            <select id="occupancyTime" class="form-control">
+                                <option>NULL</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Trimonthly">Trimonthly</option>
+                                <option value="Yearly">Yearly</option>
+                            </select>
+                            <label>Start Date</label>
+                            <input type="date" id="occupancyStartDate">
+                            <label>End Date</label>
+                            <input type="date" id="occupancyEndDate">
+                        </div>
+
+
+                        <!-- Occupancy Comparison Report Fields -->
+                        <div id="OCRFields" class="hidden">
+                            <label>Accommodation Type</label>
+                            <select id="occupancyComparisonAccomType" class="form-control"></select>
+                            <label>City</label>
+                            <select id="occupancyComparisonCity" class="form-control"></select>
+                            <label>Country</label>
+                            <select id="occupancyComparisonCountry" class="form-control"></select>
+                            <label>Time</label>
+                            <select id="occupancyComparisonTime" class="form-control">
+                                <option>NULL</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Trimonthly">Trimonthly</option>
+                                <option value="Yearly">Yearly</option>
+                            </select>
+                            <label>Start Date</label>
+                            <input type="date" id="occupancyComparisonStartDate">
+                            <label>End Date</label>
+                            <input type="date" id="occupancyComparisonEndDate">
+                        </div>
+
+
+
+
+                        <!-- Booking Cancellation Statistics Fields -->
+                        <div id="BCSFields" class="hidden">
+                            <label>Accommodation Type</label>
+                            <select id="bookingCancellationAccomType" class="form-control"></select>
+                            <label>Room Type</label>
+                            <select id="bookingCancellationRoomType" class="form-control"></select>
+                            <label>City</label>
+                            <select id="bookingCancellationCity" class="form-control"></select>
+                            <label>Country</label>
+                            <select id="bookingCancellationCountry" class="form-control"></select>
+                            <label>Time</label>
+                            <select id="bookingCancellationTime" class="form-control">
+                                <option>NULL</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Trimonthly">Trimonthly</option>
+                                <option value="Yearly">Yearly</option>
+
+                            </select>
+                            <label>Start Date</label>
+                            <input type="date" id="bookingCancellationStartDate">
+                            <label>End Date</label>
+                            <input type="date" id="bookingCancellationEndDate">
+                        </div>
+
+                        <!-- Performance Report 1 Fields -->
+                        <div id="BTRSFields" class="hidden">
+                            <label>Time</label>
+                            <select id="trendsTime" class="form-control">
+                                <option>NULL</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Weekly">Weekly</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Trimonthly">Trimonthly</option>
+                                <option value="Yearly">Yearly</option>
+                            </select>
+                            <label>Start Date</label>
+                            <input type="date" id="trendsStartDate">
+                            <label>End Date</label>
+                            <input type="date" id="trendsEndDate">
+                        </div>
+
+
+
+
+                        <!-- Performance Report 1 Fields -->
+                        <div id="PR1Fields" class="hidden">
+                            <label>Accommodation Name</label>
+                            <select id="performance1AccomName" class="form-control"></select>
+                            <label>Start Date</label>
+                            <input type="date" id="performance1StartDate">
+                            <label>End Date</label>
+                            <input type="date" id="performance1EndDate">
+                        </div>
+
+                        <!-- Performance Report 2 Fields -->
+                        <div id="PR2Fields" class="hidden">
+                            <label>Accommodation Name</label>
+                            <select id="performance2AccomName" class="form-control"></select>
+                            <label>Year</label>
+                            <input type="number" id="performance2Year">
+                        </div>
+
+                        <!-- Performance Report 3 Fields -->
+                        <div id="PR3Fields" class="hidden">
+                            <label>Accommodation Name</label>
+                            <select id="performance3AccomName" class="form-control">Accommodation Name</select>
+                            <label>Year</label>
+                            <input type="number" id="performance3Year"></input>
+                            <label>Amount</label>
+                            <input type="number" id="performance3Amount"></input>
+                        </div>
+                    </div>
+
+                    <button type="button" id="btn_search" style="display:none">Submit</button>
+                </form>
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="section_results" style="display:none">
+        <div class="container mt-4">
+            <div class="text-center" id="results">
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-info">
+                        <div class="section-title">
+                            <h2>AccoManager Booking</h2>
+                        </div>
+                        <address>
+                            <p>Panepistimioupoli <br>Aglantzia</p>
+                        </address>
+
+
+                        <div class="copyright-text">
+                            <p>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

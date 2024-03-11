@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>AccoManager Booking</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js" defer></script>
+     <script src="js/bootstrap.min.js" defer></script>
+     <script src="js/owl.carousel.min.js" defer></script>
+     <script src="js/smoothscroll.js" defer></script>
+     <script src="js/custom.js" defer></script>
+
+     <!--PAGE JS-->
+     <script src="js/user_viewaccpack.js" defer></script>
+
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" class="navbar-brand">AccoManager</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="user_portal.php">Home</a></li>
+                         <li><a href="php/logout.php">Logout</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+
+     <div id="results">
+          <div class="container mt-4">
+               <h2>Product Information</h2>
+               <table class="table">
+                 <thead>
+                   <tr>
+                     <th scope="col">Description</th>
+                     <th scope="col">Dates</th>
+                     <th scope="col">Terms</th>
+                     <th scope="col">Amenities</th>
+                     <th scope="col">Price</th>
+                   </tr>
+                 </thead>
+                 <tbody id="productTableBody">
+                   <!-- Existing row for template -->
+                   <tr id="templateRow">
+                     <td>
+                       <p><span class="productName">Villa Mylortos</span></p>
+                       <p><span class="roomtype">Double: Polla aneto</span></p>
+                       <p><span class="location">Vizajia, Xorko</span></p>
+                     </td>
+                     <td>
+                         <p>Start Date: <span class="startdate">2023-02-02</span></p>
+                         <p>End Date:<span class="startdate">2023-02-06</span></p>
+                     </td>
+                     <td class="terms">
+                         <p>All inclusive</p>
+                         <p>Breakfast</p>
+                     </td>
+                     <td class="amenities">
+
+                     </td>
+                     <td>
+                       <p>$<span class="price"></span>0</p>
+                       <p>Availability: <span class="availability"></span></p>
+                       <input type="number" class="quantity" style="width:90px" placeholder="Quantity">
+                       <button type="button" class="btnBook" style="width:90px">Book</button>
+                     </td>
+                   </tr>
+                 </tbody>
+               </table>
+             </div>
+     </div>
+
+ 
+
+
+
+     <!-- FOOTER -->
+     <footer id="footer">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2>AccoManager Booking</h2>
+                              </div>
+                              <address>
+                                   <p>Panepistimioupoli <br>Aglantzia</p>
+                              </address>
+
+
+                              <div class="copyright-text"> 
+                                   <p>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+
+
+
+</body>
+</html>

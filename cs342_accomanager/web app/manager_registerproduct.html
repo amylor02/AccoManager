@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Add Product</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/style.css">
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js" defer></script>
+     <script src="js/bootstrap.min.js" defer></script>
+     <script src="js/owl.carousel.min.js" defer></script>
+     <script src="js/smoothscroll.js" defer></script>
+     <script src="js/custom.js" defer></script>
+
+
+     <script src="js/manager_registerproduct.js" defer></script>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" class="navbar-brand">AccoManager</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="manager_portal.php">Portal</a></li>
+                         <li><a href="php/logout.php">Logout</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+     <section>
+          <div class="container">
+               <div class="text-center" id="content">
+                <form class="RegisterForm">
+                    <!-- Accommodation Details -->
+                    <h2>Product Details</h2>
+
+                    <!-- Select Accomodation -->
+                    <label for="accSelect">Select Accomodation:</label>
+                    <select id="accSelect" name="accSelect" class="form-control">
+                        <option value="">Hotel Kostas</option>
+                        <option value="">Village Maroulla</option>
+                    </select>
+
+                    
+
+
+                    <!-- Select Room Type -->
+                    <label for="roomTypeSelect">Select Room Type:</label>
+                    <select id="roomTypeSelect" name="roomTypeSelect" class="form-control">
+                        <option value="">Single</option>
+                        <option value="">Double: Double</option>
+                        <option value="">Double: Queen Beds</option>
+                        <option value="addRoomType">Add Room Type</option>
+                    </select>
+
+
+                    <!-- Add custom room type -->
+                    <div id="customRoomTypeFields">
+
+                     
+                         <label for="roomNameSelect">Select Room Type:</label>
+                         <select id="customRoomName" name="roomTypeSelect" class="form-control">
+                             <option value="">Single</option>
+                             <option value="">Double</option>
+                             <option value="">Bangalow</option>
+                         </select>
+
+
+
+                         <label for="customRoomTypeNotes">Custom Room Type Notes:</label>
+                         <textarea id="customRoomTypeNotes" name="customRoomTypeNotes" rows="4" class="form-control" disabled></textarea>
+                         <label>Max Persons: </label>
+                         <input type="number" id="customMaxPersons">
+                         <label>Subrooms: </label>
+                         <input type="number" id="customSubrooms">
+                         <button type="button" id="btn_Amenities">Select Amenities</button>
+                         <button type="button" id="btn_addRoomType">Add Room Type</button>
+
+
+                    </div>
+
+
+                    
+
+                    <!-- Select Price category -->
+                    <label for="priceCategorySelect">Price Category:</label>
+                    <select id="priceCategorySelect" name="priceCategorySelect" class="form-control">
+                         <option value="">Non-refundable</option>
+                         <option value="">50% refunduble</option>
+                         <option value="addPC">Add Price Category</option>
+                     </select>
+
+
+                    <div id="customPriceCategoryFields">
+                         <label for="customPriceCategory">Custom Room Type Notes:</label>
+                         <textarea id="customPriceCategory" name="customPriceCategory" rows="4" class="form-control" disabled></textarea>
+                         <button type="button" id="btn_addPC">Add Price Category</button>
+                    </div>
+
+
+
+                    <label for="pricePerDay">Price per day:</label>
+                    <input type="number" id="pricePerDay" name="pricePerDay" step="0.5">
+
+
+                    <label for="date_start">Start Date:</label>
+                    <input type="date" id="date_start" name="date_start">
+
+                    <label for="date_end">End Date:</label>
+                    <input type="date" id="date_end" name="date_end">
+
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" name="stock">
+
+                    <label for="stock">Minimum Stay:</label>
+                    <input type="number" id="minstay">
+
+                    <label for="stock">Maximum Stay:</label>
+                    <input type="number" id="maxstay">
+
+                    <label>Cancellation Policy</label>
+                    <select id="cancelSelect" class="form-control">
+
+                    </select>
+
+                    <label>Prepayment Policy</label>
+                    <select id="prepaymentSelect" class="form-control">
+
+                    </select>
+                    
+                    <label>Overwrite Policy</label>
+                    <select id="overwriteSelect" class="form-control">
+                    <input type="date" id="ow_startdate" placeholder="Start Date" disabled>
+                    <input type="date" id="ow_enddate" placeholder="End Date" disabled>
+
+                    </select>
+                    
+
+
+
+                   <!-- Select Terms -->
+                    <button type="button" id="btn_selectTerms">Select Terms</button>
+
+
+                    <div id="overlay">
+                         <div id="dialog" class="dialog">
+                             <h2>Select Terms</h2>
+                             <div class="selectTerms" id="selectTerms">
+                                 <label>Item 1<input type="checkbox" name="item1"></label>
+                                 <label>Item 2<input type="checkbox" name="item2"></label>
+                                 <label>Item 3<input type="checkbox" name="item3"></label>
+                                 <label>Item 4<input type="checkbox" name="item4"></label>
+                                 <label>Item 5<input type="checkbox" name="item5"></label>
+                                 <label>Item 6<input type="checkbox" name="item6"></label>
+                                 <label>Item 7<input type="checkbox" name="item7"></label>
+                                 <label>Item 8<input type="checkbox" name="item8"></label>
+                                 <button type="button" id="btn_closeTerms">Close</button>
+                             </div>
+                         </div>
+                    </div>
+
+
+
+
+                    <div id="overlayAmenities">
+                         <div id="dialog" class="dialog">
+                             <h2>Select Amenities</h2>
+                             <div class="selectAmenities" id="selectAmenities">
+                                 <label>Item 1<input type="checkbox" name="item1"></label>
+                                 <label>Item 2<input type="checkbox" name="item2"></label>
+                                 <label>Item 3<input type="checkbox" name="item3"></label>
+                                 <label>Item 4<input type="checkbox" name="item4"></label>
+                                 <label>Item 5<input type="checkbox" name="item5"></label>
+                                 <label>Item 6<input type="checkbox" name="item6"></label>
+                                 <label>Item 7<input type="checkbox" name="item7"></label>
+                                 <label>Item 8<input type="checkbox" name="item8"></label>
+                             </div>
+                             <button type="button" id="btn_closeAmenities">Close</button>
+                         </div>
+                    </div>
+
+
+                    
+                    
+            
+                    <!-- Submit Button -->
+                    <button type="button" id="btn_submitProduct">Submit</button>
+                </form>
+
+                    
+               </div>
+          </div>
+     </section>
+
+ 
+
+
+
+     <!-- FOOTER -->
+     <footer id="footer">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="footer-info">
+                              <div class="section-title">
+                                   <h2>AccoManager Booking</h2>
+                              </div>
+                              <address>
+                                   <p>Panepistimioupoli <br>Aglantzia</p>
+                              </address>
+
+
+                              <div class="copyright-text"> 
+                                   <p>Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+
+
+
+</body>
+</html>
