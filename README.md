@@ -1,4 +1,5 @@
-* This was a team project of CS342 - Databases *
+* This was a team project of CS342 - Databases 
+* Details about implemented functionalities can be found in the [manual](AccoManager_manual.pdf)
 
 ## AccoManager -  Accommodation Management System
 
