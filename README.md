@@ -10,3 +10,6 @@ AccoManager is a system designed to manage the description, availability, and re
 - Alexis Mylordos (https://github.com/amylor02)
 - Giannis Hadjiyiannis (https://github.com/giannish4d)
 - Orestis Kalogirou (https://github.com/orestisuchiha)
+
+## DB Schema
+![shema](schema.png)
